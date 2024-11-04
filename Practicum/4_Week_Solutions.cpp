@@ -185,3 +185,105 @@ short getLength(int number)
 }
 
 //zad1 and zad2 from functions can be solved with the logic from zad4 and zad5 from Loops
+
+
+
+
+
+
+WEEK 5
+	zad 1
+	#include <iostream>
+using namespace std;
+void swap(int& x, int& y);
+void swap(double& x, double& y);
+
+
+
+int main()
+{
+    int x = 0, y = 0;
+    cin >> x >> y;
+    swap(x, y);
+    cout << x <<" "<< y;
+}
+
+void swap(int& x, int& y)
+{
+    
+        int hell = x;
+        x = y;
+        y = hell;
+    
+}
+
+void swap(double& x, double& y)
+{
+    double hell = x;
+    x = y;
+    y = hell;
+}
+
+
+zad3
+#include <iostream>
+#include <cmath>
+
+using namespace std;
+void cut(int& x, int& y);
+int countDigits(int& x);
+int power(int base, unsigned int exponent);
+
+int main()
+{
+	int x = 0, y = 0;
+	cin >> x >> y;
+	cut(x, y);
+
+	
+}
+
+int cut(int x, int y)
+{
+	
+
+	int sum = countDigits(x);
+	int a = sum-1;
+	for (size_t i = 1; i <= sum; i++)
+	{
+		
+	
+		if (i != y) {
+
+			cout << x / power(10, a);
+		}
+		else
+		{
+			continue;
+		}
+		x = x % power(10, a) ;
+		a -= 1;
+	
+	}
+}
+
+int countDigits(int& x)
+{
+	int sum = 0;
+	int temp = x;
+	while (temp != 0) {
+		sum++;
+		temp = temp / 10;
+	}
+	return sum;
+}
+int power(int base, unsigned int exponent)
+{
+	int result = 1;
+	for (int i = 0; i < exponent; i++)
+	{
+		result *= base;
+	}
+	return result;
+}
+
